@@ -18,13 +18,17 @@ public class Category {
     @Size(min=3, max=15)
     private String name;
 
-    public int idGetter() {
+    public int getId() {
         return id;
     }
 
-    public String nameGetter() {
+    public String getName() {
 
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Category() {
