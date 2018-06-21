@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<form method="POST" th:object="${Category}" action="/category/add">
+
+    <div>
+        <label th:for="new-category">Enter New Category</label>
+        <input type="text" name="new-category"/>
+        <input type="submit" value="Add"/>
+    </div>
+
+
+
+
+</form>
+
+</body>
+</html>
