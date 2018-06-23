@@ -1,5 +1,5 @@
 package org.launchcode.controllers;
-import org.launchcode.models.data.Category;
+import org.launchcode.models.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.launchcode.models.data.CategoryDao;
 
-import javax.jws.WebParam;
 import javax.validation.Valid;
 
 
@@ -28,17 +27,16 @@ public class CategoryController {
         model.addAttribute("categories", categoryDao.findAll());
         model.addAttribute("title", "Categories");
 
-
         return "category/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayAddCategoryForm(Model model) {
-        model.addAttribute(new Category());
+    public String add(Model model) {
         model.addAttribute("title", "Add Category");
-
+        model.addAttribute(new Category());
         return "category/add";
     }
+
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Model model, @ModelAttribute @Valid Category category, Errors errors) {
