@@ -6,9 +6,17 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
-    <ul>
-        <li ></li>
-    </ul>
+    <table class="table">
 
+        <tr>
+            <th>Name</th>
+        </tr>
+
+        <tr th:each="cheese : ${cheeses}">
+            <td th:text="${cheese.name}"></td>
+        </tr>
+
+    </table>
+    <a href="/menu/add">Add</a>
 </body>
 </html>
